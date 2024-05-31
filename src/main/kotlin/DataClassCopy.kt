@@ -23,4 +23,10 @@ fun main() {
     )
 
     println(other)
+
+
+    println(alexandre.hashCode())
+    println(alexandre.copy().hashCode())
+    println(alexandre == alexandre.copy())
+    
 }

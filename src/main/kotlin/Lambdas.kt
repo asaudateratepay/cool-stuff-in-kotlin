@@ -1,11 +1,21 @@
 package org.example
 
+import kotlin.math.pow
+
 class PowerOfTwo: (Int) -> Int {
     override fun invoke(p1: Int): Int {
         return p1.times(p1)
     }
 }
 
+
+class Power(val powerValue: Int) : (Int) -> Int{
+
+    override fun invoke(p1: Int): Int {
+        return p1.toDouble().pow(powerValue.toDouble()).toInt()
+    }
+
+}
 
 object LambdaAsParams {
 
@@ -27,6 +37,9 @@ fun main() {
 
     println(powerOfTwo(number))
 
+
+    val power = Power(4)
+    println(power(number))
 
     val changedNumber = LambdaAsParams.changeInt(number) {it * 2 }
     println(changedNumber)
